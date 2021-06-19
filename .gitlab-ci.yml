@@ -3,10 +3,10 @@ stages:
   - release
   - build
 
-docker-build:
+test docker:
   # Use the official docker image.
   image: docker:latest
-  stage: build
+  stage: test
   services:
     - docker:dind
   before_script:
@@ -43,7 +43,7 @@ release:
     variables:
       - $CI_COMMIT_TITLE =~ /^RELEASE:.+$/
 
-build:
+build docker:
   stage: build
   # Use the official docker image.
   image: docker:latest
