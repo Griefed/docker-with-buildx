@@ -5,7 +5,8 @@ stages:
 
 test docker:
   stage: test
-  image: registry.griefed.de/prosper/docker-with-buildx:latest
+  # image: registry.griefed.de/prosper/docker-with-buildx:latest
+  image: jdrouet/docker-with-buildx:latest
   services:
     - name: docker:dind
       alias: docker
@@ -53,7 +54,8 @@ release:
 
 build:
   stage: build
-  image: registry.griefed.de/prosper/docker-with-buildx:latest
+  # image: registry.griefed.de/prosper/docker-with-buildx:latest
+  image: jdrouet/docker-with-buildx:latest
   services:
     - name: docker:dind
       alias: docker
