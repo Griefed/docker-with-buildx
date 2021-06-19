@@ -1,18 +1,20 @@
-ARG BUILDX_VERSION=0.4.2
-ARG DOCKER_VERSION=latest
-
 FROM alpine AS fetcher
 
-RUN apk add curl
+RUN \
+  apk add \
+    curl && \
+  LATEST_DOCKERX=$(curl --silent "https://api.github.com/repos/docker/buildx/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-) && \
+  curl \
+    -L \
+    --output /docker-buildx \
+      "https://github.com/docker/buildx/releases/download/v${LATEST_DOCKERX}/buildx-v${LATEST_DOCKERX}.linux-amd64" && \
+  chmod a+x \
+    /docker-buildx
 
-ARG BUILDX_VERSION
-RUN curl -L \
-  --output /docker-buildx \
-  "https://github.com/docker/buildx/releases/download/v${BUILDX_VERSION}/buildx-v${BUILDX_VERSION}.linux-amd64"
+FROM docker:latest
 
-RUN chmod a+x /docker-buildx
-
-ARG DOCKER_VERSION
-FROM docker:${DOCKER_VERSION}
+LABEL maintainer="Griefed <griefed@griefed.de>"
 
 COPY --from=fetcher /docker-buildx /usr/lib/docker/cli-plugins/docker-buildx
+
+RUN chmod a+x /usr/lib/docker/cli-plugins/docker-buildx
