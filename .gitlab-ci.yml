@@ -14,8 +14,8 @@ test docker:
   # Default branch leaves tag empty (= latest tag)
   # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE$:develop" -t "index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:develop" .
-    - docker push "$CI_REGISTRY_IMAGE:develop" "index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:develop"
+    - docker build -t $CI_REGISTRY_IMAGE$:develop -t index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:develop .
+    - docker push $CI_REGISTRY_IMAGE:develop index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:develop
   # Run this job in a branch where a Dockerfile exists
   rules:
     - if: $CI_COMMIT_BRANCH
@@ -55,8 +55,8 @@ build docker:
   # Default branch leaves tag empty (= latest tag)
   # All other branches are tagged with the escaped branch name (commit ref slug)
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE$:latest" -t "index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:latest" .
-    - docker push "$CI_REGISTRY_IMAGE:latest" "index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:latest"
+    - docker build -t $CI_REGISTRY_IMAGE$:latest -t index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest index.docker.io/$DOCKERHUB_USER/$DOCKERHUB_REPO:latest
   # Run this job in a branch where a Dockerfile exists
   rules:
     - if: $CI_COMMIT_BRANCH
