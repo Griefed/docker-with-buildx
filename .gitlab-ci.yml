@@ -7,7 +7,7 @@ test docker:
   stage: test
   image: griefed/docker-with-buildx:latest
   services:
-    - name: griefed/gitlab-ci-cd:1.0.0
+    - name: griefed/gitlab-ci-cd:1.0.1
       alias: docker
   variables:
     project_name: $CI_PROJECT_NAME
@@ -34,7 +34,7 @@ test docker:
 release:
   needs: ['test docker']
   stage: release
-  image: griefed/gitlab-ci-cd:1.0.0
+  image: griefed/gitlab-ci-cd:1.0.1
   services:
     - name: docker:dind
       alias: docker
@@ -53,7 +53,7 @@ release:
 
 build:
   stage: build
-  image: griefed/gitlab-ci-cd:1.0.0
+  image: griefed/gitlab-ci-cd:1.0.1
   services:
     - name: docker:dind
       alias: docker
