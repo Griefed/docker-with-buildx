@@ -1,3 +1,28 @@
+### [1.0.1](https://git.griefed.de/prosper/docker-with-buildx/compare/1.0.0...1.0.1) (2021-10-15)
+
+
+### 🦊 CI/CD
+
+* Create release on GitHub after tag mirror from GitLab ([6f66a73](https://git.griefed.de/prosper/docker-with-buildx/commit/6f66a738cf2ef5572d9e9b2028b92ad0dfb6ff6a))
+* Fix "breaking" type ([c0f2883](https://git.griefed.de/prosper/docker-with-buildx/commit/c0f2883194130ddf3b4100f0d909aff48bcaa207))
+* Move Docker build for GitHub container registry to GitLab ([ef797b4](https://git.griefed.de/prosper/docker-with-buildx/commit/ef797b4ec8a22916ced399b307fb26d3fbf5c1ba))
+* Remove from.cache in docker test job. Refactor build to use cache from develop tag. ([e53a4b9](https://git.griefed.de/prosper/docker-with-buildx/commit/e53a4b953b19428a445dec34c03ba9b74191ae96))
+* Switch image to gitlab-ci-cd which provides for all jobs ([75898e0](https://git.griefed.de/prosper/docker-with-buildx/commit/75898e0a5ec1597e7fda1baa2d11c59cbc557111))
+* Switch images to DockerHub ([9602ef3](https://git.griefed.de/prosper/docker-with-buildx/commit/9602ef3adae1410d5c517ac117b7769d295e4bdd))
+
+
+### 🛠 Fixes
+
+* Use stable as latest doesn't support armv7 ([4671582](https://git.griefed.de/prosper/docker-with-buildx/commit/4671582da41fdbf02958e8b5f7ddb1aff116deab))
+
+
+### Other
+
+* Add GitLab issue templates ([b2a428e](https://git.griefed.de/prosper/docker-with-buildx/commit/b2a428e05cc5cc34f3570124647136006e98a18e))
+* Inform users/visitors about move to GitLab ([d8d2914](https://git.griefed.de/prosper/docker-with-buildx/commit/d8d29141092410fac75401a4b9890cf817109021))
+* Update gitlab-ci template in README ([e99525c](https://git.griefed.de/prosper/docker-with-buildx/commit/e99525c50e32da2fe24b948ba36f0c020ee90ea2))
+* **deps:** update griefed/gitlab-ci-cd docker tag to v1.0.1 ([2200ceb](https://git.griefed.de/prosper/docker-with-buildx/commit/2200ceb80bed62b6f3b6157105a155063e2fe163))
+
 ## [1.0.0](https://git.griefed.de/prosper/docker-with-buildx/compare/...1.0.0) (2021-06-19)
 
 
