@@ -1,3 +1,15 @@
+## [2.0.0](https://git.griefed.de/prosper/docker-with-buildx/compare/1.0.1...2.0.0) (2021-11-16)
+
+
+### 🦊 CI/CD
+
+* Update ci-cd image to 1.0.2 ([b1abe8f](https://git.griefed.de/prosper/docker-with-buildx/commit/b1abe8fbd2a1e2ff76493dbd45f35c77d72fd8e3))
+
+
+### Other
+
+* **deps:** update griefed/gitlab-ci-cd docker tag to v1.0.3 ([0da4d46](https://git.griefed.de/prosper/docker-with-buildx/commit/0da4d46c6e110a90161883061842e7018fc07504))
+
 ### [1.0.1](https://git.griefed.de/prosper/docker-with-buildx/compare/1.0.0...1.0.1) (2021-10-15)
 
 
